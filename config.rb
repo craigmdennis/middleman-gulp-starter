@@ -31,6 +31,12 @@ page '/*.txt', layout: false
 
 # Build-specific configuration
 configure :build do
+  # Minify HTML
+  activate :minify_html do |html|
+    html.remove_quotes = false
+    html.remove_intertag_spaces = true
+  end 
+
   # Ignore the CSS file Middleman normally generates
   # Middleman expects `site.css.scss` → `site.css`
   # We strip the `.css` to prevent Gulp generating `site.css.css`
