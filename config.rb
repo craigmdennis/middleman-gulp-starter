@@ -31,11 +31,12 @@ page '/*.txt', layout: false
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
+  # Ignore the CSS file Middleman normally generates
+  # Middleman expects `site.css.scss` → `site.css`
+  # We strip the `.css` to prevent Gulp generating `site.css.css`
+  # Add your site's main `.scss` filename (without the extension)
+  # To understand more, comment this out and run `middleman build`
+  ignore 'stylesheets/site'
 end
 
 activate :external_pipeline,
