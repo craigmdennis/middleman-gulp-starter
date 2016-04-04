@@ -1,3 +1,3 @@
 // This is where it all goes :)
 
-require('test.js');
+require('_test');
