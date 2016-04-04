@@ -8,3 +8,5 @@ Watch the screencast: https://youtu.be/-io8EeB3GHI
 1. `bundle install`
 2. `npm install`
 3. `middleman serve`
+
+You should probably use the latest code from Middleman and Gulp Starter rather than rely on this repo being updated.
