@@ -1,15 +1,15 @@
 {
-  "name": "gulp-starter",
-  "version": "3.1.0",
-  "description": "A full featured configurable gulp asset pipeline and static site builder",
+  "name": "middleman-gulp-starter",
+  "version": "1.0.0",
+  "description": "Middleman v4 + Gulp Starter",
   "engines": {
     "node": ">=0.12.0 ~5.9.0",
     "npm": ">=2.14.12 ~3.7.3"
   },
-  "homepage": "http://code.viget.com/gulp-starter/",
+  "homepage": "https://github.com/craigmdennis/middleman-gulp-starter",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vigetlabs/gulp-starter.git"
+    "url": "git@github.com:craigmdennis/middleman-gulp-starter.git"
   },
   "scripts": {
     "start": "gulp",
@@ -78,8 +78,5 @@
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.10.0"
   },
-  "license": "MIT",
-  "dependencies": {
-    "normalize.css": "^4.0.0"
-  }
+  "license": "MIT"
 }
