@@ -60,6 +60,7 @@ configure :build do
 
     # Ignore the actual manifest file itself
     ignore 'rev-manifest.json'
+    ignore 'static/*'
   end
 end
 
