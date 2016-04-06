@@ -1,3 +1,7 @@
+# Read from Gulp Starter's config.json file
+# and rev-manifest file (if present)
+require './lib/gulp'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -35,7 +39,7 @@ configure :build do
   activate :minify_html do |html|
     html.remove_quotes = false
     html.remove_intertag_spaces = true
-  end 
+  end
 
   # Ignore the CSS file Middleman normally generates
   # Middleman expects `site.css.scss` → `site.css`
@@ -43,8 +47,23 @@ configure :build do
   # Add your site's main `.scss` filename (without the extension)
   # To understand more, comment this out and run `middleman build`
   ignore 'stylesheets/site'
+
+  # Check to see if file revving is enabled
+  rev_manifest = REV_MANIFEST if defined?(REV_MANIFEST)
+
+  # If file revving is enabled we need to ignore the original files
+  # as they will still get copied by Middleman
+  if rev_manifest
+    rev_manifest.each do |key, value|
+      ignore key
+    end
+
+    # Ignore the actual manifest file itself
+    ignore 'rev-manifest.json'
+  end
 end
 
+# Initialise Gulp Starter when running `middleman build` and `middleman serve`
 activate :external_pipeline,
   name: :gulp,
   command: build? ? 'npm run production' : 'npm run gulp',

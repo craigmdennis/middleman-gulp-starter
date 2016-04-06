@@ -75,7 +75,7 @@
     },
 
     "production" : {
-      "rev": false
+      "rev": true
     }
   }
 }
