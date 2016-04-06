@@ -27,7 +27,7 @@ So instead of this:
 ```
 
 You would do this:
-```ruby
+```erb
 <%= image_tag gulp_image_path('logo.png'), alt: 'logo' %>
 ```
 
