@@ -41,6 +41,13 @@ configure :build do
     html.remove_intertag_spaces = true
   end
 
+  # Initialise Gulp Starter when running `middleman build`
+  activate :external_pipeline,
+    name: :gulp,
+    command: "npm run production",
+    source: ".tmp",
+    latency: 1
+
   # Ignore the CSS file Middleman normally generates
   # Middleman expects `site.css.scss` → `site.css`
   # We strip the `.css` to prevent Gulp generating `site.css.css`
@@ -63,10 +70,3 @@ configure :build do
     ignore 'static/*'
   end
 end
-
-# Initialise Gulp Starter when running `middleman build` and `middleman serve`
-activate :external_pipeline,
-  name: :gulp,
-  command: build? ? 'npm run production' : 'npm run gulp',
-  source: ".tmp",
-  latency: 1
