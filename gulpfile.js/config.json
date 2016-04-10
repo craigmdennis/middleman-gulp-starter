@@ -7,8 +7,7 @@
   "tasks": {
     "browserSync": {
       "proxy": "http://localhost:4567",
-      "reloadDelay" : 500,
-      "files": ["./source/**/*.{erb,html,haml}"]
+      "reloadDelay" : 2000
     },
 
     "static": {
@@ -40,6 +39,14 @@
         "includePaths": []
       },
       "extensions": ["sass", "scss", "css"]
+    },
+
+    "html": {
+      "src": "./",
+      "dest": "./",
+      "htmlmin": {},
+      "extensions": ["html", "erb", "haml"],
+      "excludeFolders": ["images", "javascripts", "stylesheets"]
     },
 
     "images": {
