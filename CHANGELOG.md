@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.3.0] - 2016-04-10
+
+### Added
+- Utilise Middleman's environment configs
+- Added a setup script to install dependencies
+- Temp directory for external_pipeline is now a variable set from `config.json` only.
+
+### Changed 
+- Update the README with more information
+
 ## [1.2.0] - 2016-04-06
 
 ### Added
