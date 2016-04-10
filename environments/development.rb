@@ -1,5 +1,4 @@
-# Invoke this environment by appending `-e gulp` from the command line.
-# Example: `middleman server -e gulp`
+# This environment is invoked by default when running `middleman server`
 activate :external_pipeline,
   name: :gulp,
   command: "npm run gulp",
