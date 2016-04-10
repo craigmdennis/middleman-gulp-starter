@@ -29,9 +29,7 @@ There may be [instances where you want to run the standard Middleman tasks witho
 Now you can create `environments/debug` and add your own custom config in there.
 
 ## Revving Assets
-You'll no longer be able to use the built in Middleman asset helpers like `javascript_include_tag`. Instead, you'll have to use a set of **gulp_asset_helpers** with regular markup. Filenames get hashed so you can cache them forever. [Learn more](helpers/README.md)
-
-You can disable asset revving in production on the [`config.json`](https://github.com/craigmdennis/middleman-gulp-starter/blob/master/gulpfile.js/config.json#L78) at the bottom.
+You'll no longer be able to use the built in Middleman asset helpers like `javascript_include_tag` on their own. Instead, you'll have to add a set of **gulp_asset_helpers**. Filenames get hashed so you can cache them forever. [Learn more](helpers/README.md)
 
 ```ruby
 gulp_asset_path('image/asset.jpg') # -> /image/logo-n39o4orb81.png
@@ -59,6 +57,8 @@ You would do this:
 ```erb
 <%= stylesheet_link_tag gulp_css_path('site.css') %>
 ```
+
+You can disable asset revving in production on the [`config.json`](https://github.com/craigmdennis/middleman-gulp-starter/blob/master/gulpfile.js/config.json#L78) at the bottom.
 
 ## Contributing
 Please make sure to submit PRs to the latest feature branch.
