@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.3.1] - 2016-04-11
+
+### Changed 
+- Remove unrelated comments
+- Correctly reference the icon sprite in Rails helper
+
 ## [1.3.0] - 2016-04-10
 
 ### Added
