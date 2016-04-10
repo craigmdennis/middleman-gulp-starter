@@ -44,9 +44,10 @@ configure :build do
   # Ignore the CSS file Middleman normally generates
   # Middleman expects `site.css.scss` → `site.css`
   # We strip the `.css` to prevent Gulp generating `site.css.css`
-  # Add your site's main `.scss` filename (without the extension)
-  # To understand more, comment this out and run `middleman build`
   ignore 'stylesheets/site'
+
+  # Ignore static files
+  ignore 'static/*'
 
   # Check to see if file revving is enabled
   rev_manifest = REV_MANIFEST if defined?(REV_MANIFEST)
@@ -60,7 +61,6 @@ configure :build do
 
     # Ignore the actual manifest file itself
     ignore 'rev-manifest.json'
-    ignore 'static/*'
   end
 end
 
@@ -68,5 +68,5 @@ end
 activate :external_pipeline,
   name: :gulp,
   command: build? ? 'npm run production' : 'npm run gulp',
-  source: ".tmp",
+  source: GULP_CONFIG['root']['dest'],
   latency: 1
