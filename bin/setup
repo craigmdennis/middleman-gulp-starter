@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+set -e
+
+# Make sure Bundler is installed
+if [ "$(gem query -i -n bundler)" = "false" ]; then
+  echo "Installing Bundler..."
+  gem install bundler
+fi
+
+# Set up Ruby dependencies via Bundler
+echo "Installing Ruby gem dependencies..."
+bundle install
+
+# Install node packages
+echo "Installing Node package dependencies..."
+npm install
