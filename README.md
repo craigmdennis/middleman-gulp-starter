@@ -58,6 +58,14 @@ You would do this:
 <%= stylesheet_link_tag gulp_css_path('site.css') %>
 ```
 
+### The only exception to this is when referencing Middleman's sitemap
+Due to the way that Middleman merges the temporary folder with the source folder in the sitemap, when you reference it you don't need to use the `gulp_image_path` helper as the files in the sitemap will already be the revved files.
+
+```haml
+- sitemap.resources.select{ |r| r.path.start_with?("images/some-folder-of-images") }.each do |image|
+    = image_tag image.path
+```
+
 You can disable asset revving in production on the [`config.json`](https://github.com/craigmdennis/middleman-gulp-starter/blob/master/gulpfile.js/config.json#L78) at the bottom.
 
 ## Contributing
