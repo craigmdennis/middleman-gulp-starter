@@ -11,6 +11,7 @@ activate :external_pipeline,
 ignore 'stylesheets/site'
 
 # Ignore static files
+ignore 'icons/*'
 ignore 'static/*'
 
 # Check to see if file revving is enabled
@@ -30,4 +31,5 @@ end
 activate :minify_html do |html|
   html.remove_quotes = false
   html.remove_intertag_spaces = true
+  html.remove_http_protocol = true
 end
