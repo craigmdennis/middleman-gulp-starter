@@ -32,7 +32,9 @@ module.exports = function(env) {
           loader: 'babel-loader',
           exclude: /node_modules/,
           query: config.tasks.js.babel
-        }
+        },
+        { test: /\.coffee$/, loader: "coffee-loader" },
+        { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" }
       ]
     }
   }
