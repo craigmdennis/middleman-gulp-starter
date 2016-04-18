@@ -2,9 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.4.0] - 2016-04-18
+
+### Fixed
+- Add the `html` task back (it was missing for some reason)
+
+### Added
+- Add coffeescript support
+- Add `node_modules` search for webpack requires
+
 ## [1.3.1] - 2016-04-11
 
-### Changed 
+### Changed
 - Remove unrelated comments
 - Correctly reference the icon sprite in Rails helper
 
@@ -15,7 +24,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Added a setup script to install dependencies
 - Temp directory for external_pipeline is now a variable set from `config.json` only.
 
-### Changed 
+### Changed
 - Update the README with more information
 
 ## [1.2.0] - 2016-04-06

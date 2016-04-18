@@ -26,17 +26,17 @@ var getData = function(file) {
 var htmlTask = function() {
 
   return gulp.src(paths.src)
-    .pipe(data(getData))
-    .on('error', handleErrors)
-    .pipe(render({
-      path: [path.join(config.root.src, config.tasks.html.src)],
-      envOptions: {
-        watch: false
-      }
-    }))
-    .on('error', handleErrors)
-    .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
-    .pipe(gulp.dest(paths.dest))
+    // .pipe(data(getData))
+    // .on('error', handleErrors)
+    // .pipe(render({
+    //   path: [path.join(config.root.src, config.tasks.html.src)],
+    //   envOptions: {
+    //     watch: false
+    //   }
+    // }))
+    // .on('error', handleErrors)
+    // .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
+    // .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 
 }

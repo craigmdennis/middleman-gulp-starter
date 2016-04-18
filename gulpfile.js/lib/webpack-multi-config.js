@@ -22,7 +22,10 @@ module.exports = function(env) {
     context: jsSrc,
     plugins: [],
     resolve: {
-      root: jsSrc,
+      root: [
+        jsSrc,
+        path.join(__dirname, "..", "gulp", "node_modules")
+      ],
       extensions: [''].concat(extensions)
     },
     module: {
@@ -32,7 +35,9 @@ module.exports = function(env) {
           loader: 'babel-loader',
           exclude: /node_modules/,
           query: config.tasks.js.babel
-        }
+        },
+        { test: /\.coffee$/, loader: "coffee-loader" },
+        { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" }
       ]
     }
   }
