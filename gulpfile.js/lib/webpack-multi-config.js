@@ -22,7 +22,10 @@ module.exports = function(env) {
     context: jsSrc,
     plugins: [],
     resolve: {
-      root: jsSrc,
+      root: [
+        jsSrc,
+        path.join(__dirname, "..", "gulp", "node_modules")
+      ],
       extensions: [''].concat(extensions)
     },
     module: {
