@@ -58,7 +58,7 @@ You would do this:
 <%= stylesheet_link_tag gulp_css_path('site.css') %>
 ```
 
-### The only exception to this is when referencing Middleman's sitemap
+### When NOT to use the `gulp_asset_path` helpers
 Due to the way that Middleman merges the temporary folder with the source folder in the sitemap, when you reference it you don't need to use the `gulp_image_path` helper as the files in the sitemap will already be the revved files.
 
 ```haml
