@@ -3,7 +3,7 @@ module GulpAssetHelper
     rev_manifest = nil
 
     # In development, check for the manifest every time
-    if config[:environment] != 'production'
+    if config[:environment].to_s != 'production'
       rev_manifest = JSON.parse(File.read(REV_MANIFEST_PATH)) if File.exist?(REV_MANIFEST_PATH)
     # In production, use the manifest cached in initializers/gulp.rb
     else
