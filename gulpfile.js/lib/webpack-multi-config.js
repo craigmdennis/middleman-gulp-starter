@@ -36,8 +36,13 @@ module.exports = function(env) {
           exclude: /node_modules/,
           query: config.tasks.js.babel
         },
-        { test: /\.coffee$/, loader: "coffee-loader" },
-        { test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" }
+        {
+          test: /\.coffee$/,
+          loader: "coffee-loader" },
+        {
+          test: /\.(coffee\.md|litcoffee)$/,
+          loader: "coffee-loader?literate"
+        }
       ]
     }
   }
@@ -87,12 +92,8 @@ module.exports = function(env) {
       }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false
-        },
-        compress: {
-          drop_console: true
-        },
+        output: { comments: false },
+        compress: { drop_console: true },
       }),
       new webpack.NoErrorsPlugin()
     )
