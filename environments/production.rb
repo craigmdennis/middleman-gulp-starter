@@ -23,11 +23,12 @@ if rev_manifest
   rev_manifest.each do |key, value|
     ignore key
   end
-
-  # Ignore the actual manifest file itself
-  ignore 'rev-manifest.json'
 end
 
+# Ignore the actual manifest file
+ignore 'rev-manifest.json'
+
+# HTML Optimisation
 activate :minify_html do |html|
   html.remove_quotes = false
   html.remove_intertag_spaces = true
