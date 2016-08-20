@@ -7,7 +7,8 @@
   "tasks": {
     "browserSync": {
       "proxy": "http://localhost:4567",
-      "reloadDelay" : 1000
+      "reloadDelay" : 1000,
+      "files": ["./source/**/*.{erb,html,haml}"]
     },
 
     "static": {
